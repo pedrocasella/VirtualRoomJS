@@ -72,4 +72,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
     })
 
+    //Objects effects
+
+        //window timer
+        const time = new Date().getHours()
+        const bedroomWindow = document.getElementById('bedroom-window')
+        if(time <= 5 && time >=0 || time <= 23 && time >= 18 ){
+            bedroomWindow.style.backgroundImage = 'url(./../bedroom-scenery/window-night.png)'
+        }
+
 })
+
