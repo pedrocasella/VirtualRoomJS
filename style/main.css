@@ -42,6 +42,20 @@ body{
     background-size: 50px;
 }
 
+.bedroom-door{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    z-index: 10;
+    background-image: url(./../texture/doorlight.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate(370px, 400px);
+    filter: blur(10px);
+    opacity: .4;
+}
+
 .light-bedroom{
     position: absolute;
     width: 150px;
@@ -123,6 +137,8 @@ body{
     border-width: 3px;
     border-color: rgb(243, 136, 74);
     height: 80px;
+    -webkit-box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.21); 
+    box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.21);
 }
 
 .pictures{
@@ -234,4 +250,30 @@ body{
         overflow: hidden;
         opacity: .8;
         color: white;
+    }
+
+/* Exit */
+    .exit{
+        display: none;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        background-color: rgb(27, 27, 27);
+        border-radius: 8pt;
+        transform: translate(80px, 100px);
+        z-index: 11;
+    }
+
+    .exit h2{
+        margin: 1.5rem;
+        font-size: 15pt;
+        color: #ffffffff;
+    }
+
+    .exit button{
+        width: 100px;
+        height: 30px;
+        border-radius: 8pt;
+        border-style: solid;
+        margin: 4px;
     }

@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   setTimeout(result, 100*1)
-  setTimeout(login, 1000*3)
+  setTimeout(login, 1000*4)
 
   
 //Pictures
@@ -98,6 +98,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     const db = getDatabase();
     const imageRef = ref(db, 'user/' + localStorage.getItem('uid') + '/images')
     const pushImage = push(imageRef)
+    document.getElementById('image-area').innerHTML = ''
     set(pushImage, {
       file: localStorage.getItem('image'),
     });
@@ -108,25 +109,27 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   })
 
-  const db = getDatabase();
-
-  const imageRef = ref(db, 'user/' + localStorage.getItem('uid') + '/images')
-  onValue(imageRef, (snapshot) => {
-    const data = snapshot.val();
-    snapshot.forEach((childSnapshot)=>{
-      const key = childSnapshot.key
-      const data = childSnapshot.val()
-      const imageArea = document.getElementById('image-area')
-      const li = document.createElement('li')
-      const liId = document.createAttribute('id')
-      liId.value = 'li-image'
-      li.setAttributeNode(liId)
-      imageArea.appendChild(li)
-      const img = document.createElement('img')
-      img.src = data.file
-      li.appendChild(img)
+  function addImage(){
+    const db = getDatabase();
+    const imageRef = ref(db, 'user/' + localStorage.getItem('uid') + '/images')
+    onValue(imageRef, (snapshot) => {
+      const data = snapshot.val();
+      snapshot.forEach((childSnapshot)=>{
+        const key = childSnapshot.key
+        const data = childSnapshot.val()
+        const imageArea = document.getElementById('image-area')
+        const li = document.createElement('li')
+        const liId = document.createAttribute('id')
+        liId.value = 'li-image'
+        li.setAttributeNode(liId)
+        imageArea.appendChild(li)
+        const img = document.createElement('img')
+        img.src = data.file
+        li.appendChild(img)
+      });
     });
-  });
+  }
+  setTimeout(addImage, 1000*4)
 
   document.getElementById('return-btn').addEventListener('click', ()=>{
 

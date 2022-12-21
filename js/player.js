@@ -66,7 +66,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 person.style.left = '0px'
             }
         
-
+    //Interact Objects
+            //exit bedroom
+            if(positionX >= 360 && positionX <= 412 && positionY == 350){
+                document.getElementById('exit').style.display = 'block'
+            }
 
     })
     
@@ -89,6 +93,18 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(time <= 5 && time >=0 || time <= 23 && time >= 18 ){
             bedroomWindow.style.backgroundImage = 'url(./../bedroom-scenery/window-night.png)'
         }
+
+        //door exit
+        document.getElementById('cancel-btn').addEventListener('click', ()=>{
+            document.getElementById('exit').style.display = 'none'
+
+        })
+
+        document.getElementById('exit-btn').addEventListener('click', ()=>{
+            localStorage.clear()
+            location.reload()
+
+        })
 
 })
 
