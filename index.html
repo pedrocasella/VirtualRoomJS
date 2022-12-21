@@ -7,18 +7,30 @@
     <link rel="stylesheet" href="./style/main.css">
     <title>Virtual Bedroom</title>
 </head>
-<body>
+<body id="body">
     <center>
+        <!-- Pictures -->
+        <div class="pictures" id="pictures">
+            <label for="image-input" class="add-image" id="add-image"></label><button class="send-image-btn" id="send-image-btn">Send Image</button>
+            <input type="file" name="image" id="image-input">
+            <ul class="image-area" id="image-area">
+
+            </ul>
+            <div class="shelf"></div>
+            <div class="return-btn" id="return-btn"></div>
+        </div>
+        <!-------------->
         <div class="light-bedroom"></div>
+        <div class="picture-shelf" id="picture-shelf"></div>
         <div class="computer-table"></div>
         <div class="wall">
             <center><div class="window" id="bedroom-window"></div></center>
         </div>
-        <div class="floor">
-            <div class="person" id="person">
-            </div>
+        <div class="floor" id="floor">
+            <div class="personMan" id="person"></div>
         </div>
     </center>
-    <script src="./js/game.js"></script>
+    <script src="./js/player.js"></script>
+    <script type="module" src="./js/login.js"></script>
 </body>
 </html>

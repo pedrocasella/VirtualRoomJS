@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue - 4 + 'px'
 
-            console.log(position)
+
             person.style.top = position
         }
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue + 4 + 'px'
 
-            console.log(position)
+
             person.style.top = position
         }
 
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
             const position = positionValue + 4 + 'px'
 
-            console.log(position)
+
             person.style.left = position
         }
 
@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
             const position = positionValue - 4 + 'px'
 
-            console.log(position)
             person.style.left = position
 
         }
@@ -48,7 +47,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const positionY = parseInt(getComputedStyle(person).top.replace('px', ''))
             
             //wall top
-            console.log(positionY)
             if(key == 87 && positionY <= 0){
                 person.style.top = '0px'
             }
@@ -68,10 +66,21 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 person.style.left = '0px'
             }
         
-        console.log(key)
+
 
     })
+    
+    //Movement with Mouse
+    addEventListener('click', (e)=>{
 
+        const player = document.getElementById('person')
+
+        const rect = e. target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        //console.log('X: ' + x + ' e Y: ' + y)
+
+    })
     //Objects effects
 
         //window timer
