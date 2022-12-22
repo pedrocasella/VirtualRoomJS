@@ -20,6 +20,18 @@ body{
     background-color: rgb(51, 51, 51);
     border-radius: 8px;
 }
+
+/* Loading */
+
+.loading{
+    display: block;
+    position: absolute;
+    width: 500px;
+    height: 480px;
+    background-color: rgb(22, 0, 22);
+    z-index: 30;
+}
+
 /* Bedroom */
 
 .wall{
@@ -218,6 +230,89 @@ body{
     cursor: pointer;
 }
 
+/* Cellphone */
+
+.cellphone{
+    position: absolute;
+    width: 200px;
+    height: 350px;
+    background-image: url(./../texture/cellphone.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 95%;
+    z-index: 12;
+    transform: translate(120px, 40px);
+}
+
+.cellphone .messages-box{
+    width: 120px;
+    height: 212px;
+    position: absolute;
+    list-style: none;
+    font-weight: bolder;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    font-size: 7.5pt;
+    transform: translate(40px, 50px);
+    overflow-y: scroll;
+}
+
+.messages-box .messages{
+    color: white;
+    font-weight: normal;
+}
+
+.messages-box .nameCtt{
+    margin-top: 4px;
+    font-size: 5pt;
+}
+
+.sendedMessage{
+    margin-bottom: .5rem;
+}
+
+.cellphone li{
+    padding-left: 2px;
+}
+
+.cellphone .close-cellphone{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffffff;
+}
+
+.cellphone .close-cellphone:hover{
+    transition: linear .2s;
+    cursor: pointer;
+}
+
+
+        /* Message Input*/
+        .message-input{
+            position: absolute;
+            width: 100px;
+            height: 20px;
+            border-radius: 8px;
+            border-style: solid;
+            transform: translate(-60px, 265px);
+            font-size: 8pt;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .sendMenssage-btn{
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transform: translate(147px, 267px);
+            background-image: url(./../texture/button002.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 95%;
+    
+        }
 
 /* Person */
 

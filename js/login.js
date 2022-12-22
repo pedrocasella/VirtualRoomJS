@@ -25,7 +25,7 @@
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
-  //Login
+//Login
   function result(){
     const auth = getAuth(app);
     getRedirectResult(auth)
@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
-      console.log(user)
       localStorage.setItem('uid', user.uid)
       localStorage.setItem('name', user.displayName)
     }).catch((error) => {
@@ -46,12 +45,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   function login(){
     if(localStorage.getItem('uid') != null){
-      console.log('logged') 
       const db = getDatabase();
       const dbRef = ref(getDatabase());
       get(child(dbRef, `user/${localStorage.getItem('uid')}`)).then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
+          
         } else {
           set(ref(db, 'user/' + localStorage.getItem('uid')), {
             id: localStorage.getItem('uid'),
@@ -125,5 +123,30 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('pictures').style.display = 'none'
   })
 
+//Messages
 
+  const db = getDatabase()
+    onValue(ref(db, 'user/globalMessages'), (snapshot) => {  
+      snapshot.forEach((snapshot)=>{
+        const data = snapshot.val();
+        const key = snapshot.key
+        console.log(data)
+        document.getElementById('messages-box').innerHTML = ''
+        setTimeout(()=>{
+          document.getElementById('messages-box').innerHTML += "<ul class='message'><li class='nameCtt'>" + data.sender + "</li><li class='sendedMessage'>" + data.message + "</li></ul><hr>"
+        }, 100*5)
+      })
+    });
+
+    document.getElementById('sendMenssage-btn').addEventListener('click', ()=>{
+        const message = document.getElementById('message-input').value
+        const messageRef = ref(db, 'user/globalMessages')
+        const messagePush = push(messageRef)
+        set(messagePush, {
+          sender: localStorage.getItem('name'),
+          message: message,
+        })
+        console.log(message)
+        document.getElementById('message-input').value = ''
+    })
 })

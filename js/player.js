@@ -1,3 +1,9 @@
+//Loading
+
+setInterval(()=>{
+    document.getElementById('loading').style.display = 'none'
+}, 1000*10)
+
 document.addEventListener('DOMContentLoaded', ()=>{
 
     //Person Movements
@@ -73,6 +79,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
             //exit bedroom
             if(positionX >= 360 && positionX <= 412 && positionY == 350){
                 document.getElementById('exit').style.display = 'block'
+            }else{
+                document.getElementById('exit').style.display = 'none'
             }
 
             //open shelf of pictures
@@ -146,6 +154,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
             localStorage.clear()
             location.reload()
 
+        })
+
+        //close cellphone
+        document.getElementById('close-cellphone').addEventListener('click', ()=>{
+            document.getElementById('cellphone').style.display = 'none'
         })
 
 })
