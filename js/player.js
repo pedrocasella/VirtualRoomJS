@@ -6,12 +6,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const person = document.getElementById('person')
         const key = e.keyCode
 
+        //walking
         //up
         if(key == 87){
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue - 4 + 'px'
-
-
+            
+            person.style.backgroundImage = 'url(./../charater/walkingback.gif)'
             person.style.top = position
         }
 
@@ -20,26 +21,28 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue + 4 + 'px'
 
-
+            person.style.backgroundImage = 'url(./../charater/walkingfront.gif)'
             person.style.top = position
         }
 
         //left
-        if(key == 68){
-            const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
-            const position = positionValue + 4 + 'px'
-
-
-            person.style.left = position
-        }
-
-        //right
         if(key == 65){
             const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
             const position = positionValue - 4 + 'px'
 
+            person.style.backgroundImage = 'url(./../charater/walkingleft.gif)'
             person.style.left = position
 
+        }
+        
+
+        //right
+        if(key == 68){
+            const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
+            const position = positionValue + 4 + 'px'
+
+            person.style.backgroundImage = 'url(./../charater/walkingright.gif)'
+            person.style.left = position
         }
 
         //Limits
@@ -47,8 +50,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const positionY = parseInt(getComputedStyle(person).top.replace('px', ''))
             
             //wall top
-            if(key == 87 && positionY <= 0){
-                person.style.top = '0px'
+            if(key == 87 && positionY <= -36){
+                person.style.top = '-36px'
             }
 
              //wall bottom
@@ -72,6 +75,45 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 document.getElementById('exit').style.display = 'block'
             }
 
+            //open shelf of pictures
+            if(positionX >= 68 && positionX <= 96 && positionY == -36){
+                document.getElementById('pictures').style.display = 'block'
+                setInterval(()=>{
+                  var file = document.getElementById('image-input').files[0]
+                  var reader = new FileReader();
+                  reader.readAsDataURL(file);
+                  reader.onload = function () {
+                    localStorage.setItem('image', reader.result)
+                    document.getElementById('add-image').style.backgroundImage = 'url(' + reader.result + ')'
+                  }
+                }, 1000*3)
+            }
+
+    })
+
+    //Player stop movements
+    addEventListener('keyup',(e)=>{
+        const person = document.getElementById('person')
+        const key = e.keyCode
+         
+        //up
+         if(key == 87){
+
+            person.style.backgroundImage = 'url(./../charater/back01.png)'
+        }
+        //down
+        if(key == 83){
+            person.style.backgroundImage = 'url(./../charater/front01.png)'
+
+        }
+        if(key == 65){
+            person.style.backgroundImage = 'url(./../charater/left01.png)'
+        }
+        //right
+        if(key == 68){
+            person.style.backgroundImage = 'url(./../charater/right01.png)'
+        }
+
     })
     
     //Movement with Mouse
@@ -91,7 +133,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const time = new Date().getHours()
         const bedroomWindow = document.getElementById('bedroom-window')
         if(time <= 5 && time >=0 || time <= 23 && time >= 18 ){
-            bedroomWindow.style.backgroundImage = 'url(./../bedroom-scenery/window-night.png)'
+            bedroomWindow.style.backgroundImage = 'url(./../bedroom-scenery/windownight.png)'
         }
 
         //door exit

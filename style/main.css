@@ -222,10 +222,10 @@ body{
 /* Person */
 
 .floor #person{
-    background-image: url(./../charater/front001.png);
+    background-image: url(./../charater/front01.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 75px;
+    background-size: 65px;
     position: absolute;
     width: 50px;
     height: 50px;

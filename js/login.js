@@ -80,20 +80,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   
 //Pictures
 
-  document.getElementById('picture-shelf').addEventListener('click',()=>{
-    document.getElementById('pictures').style.display = 'block'
-    setInterval(()=>{
-      var file = document.getElementById('image-input').files[0]
-      var reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = function () {
-        localStorage.setItem('image', reader.result)
-        document.getElementById('add-image').style.backgroundImage = 'url(' + reader.result + ')'
-      }
-    }, 1000*3)
-
-  })
-
+  //send image to shelf
   document.getElementById('send-image-btn').addEventListener('click', ()=>{
     const db = getDatabase();
     const imageRef = ref(db, 'user/' + localStorage.getItem('uid') + '/images')
@@ -109,6 +96,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   })
 
+  //add image in shelf
   function addImage(){
     const db = getDatabase();
     const imageRef = ref(db, 'user/' + localStorage.getItem('uid') + '/images')
@@ -131,6 +119,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
   setTimeout(addImage, 1000*4)
 
+  //exit to shelf
   document.getElementById('return-btn').addEventListener('click', ()=>{
 
     document.getElementById('pictures').style.display = 'none'
