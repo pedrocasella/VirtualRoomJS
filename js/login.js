@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
       snapshot.forEach((snapshot)=>{
         const data = snapshot.val();
         const key = snapshot.key
-        console.log(data)
         document.getElementById('messages-box').innerHTML = ''
         setTimeout(()=>{
           document.getElementById('messages-box').innerHTML += "<ul class='message'><li class='nameCtt'>" + data.sender + "</li><li class='sendedMessage'>" + data.message + "</li></ul><hr>"
@@ -146,7 +145,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
           sender: localStorage.getItem('name'),
           message: message,
         })
-        console.log(message)
         document.getElementById('message-input').value = ''
     })
 })
