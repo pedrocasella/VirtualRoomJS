@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(key == 87){
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue - 4 + 'px'
-            
-            person.style.backgroundImage = 'url(./../charater/walkingback.gif)'
+
+            person.style.animation = 'walking-back .6s infinite'
             person.style.top = position
         }
 
@@ -26,8 +26,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         if(key == 83){
             const positionValue = parseInt(getComputedStyle(person).top.replace('px', ''))
             const position = positionValue + 4 + 'px'
-
-            person.style.backgroundImage = 'url(./../charater/walkingfront.gif)'
+            person.style.animation = 'walking-front .6s infinite'
             person.style.top = position
         }
 
@@ -36,7 +35,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
             const position = positionValue - 4 + 'px'
 
-            person.style.backgroundImage = 'url(./../charater/walkingleft.gif)'
+            person.style.animation = 'walking-left .6s infinite'
             person.style.left = position
 
         }
@@ -47,7 +46,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             const positionValue = parseInt(getComputedStyle(person).left.replace('px', ''))
             const position = positionValue + 4 + 'px'
 
-            person.style.backgroundImage = 'url(./../charater/walkingright.gif)'
+            person.style.animation = 'walking-right .6s infinite'
             person.style.left = position
         }
 
@@ -108,18 +107,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
          if(key == 87){
 
             person.style.backgroundImage = 'url(./../charater/back01.png)'
+            person.style.animation = 'none'
         }
         //down
         if(key == 83){
             person.style.backgroundImage = 'url(./../charater/front01.png)'
+            person.style.animation = 'none'
 
         }
         if(key == 65){
             person.style.backgroundImage = 'url(./../charater/left01.png)'
+            person.style.animation = 'none'
         }
         //right
         if(key == 68){
             person.style.backgroundImage = 'url(./../charater/right01.png)'
+            person.style.animation = 'none'
         }
 
     })

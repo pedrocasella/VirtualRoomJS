@@ -5,6 +5,68 @@
 
 }
 
+/* Animations */
+
+@keyframes walking-front {
+    0%{
+        background-image: url(./../charater/front01.png);
+    }
+    25%{
+        background-image: url(./../charater/front02.png);
+    }
+    50%{
+        background-image: url(./../charater/front03.png);
+    }
+    100%{
+        background-image: url(./../charater/front04.png);
+    }
+}
+
+@keyframes walking-back {
+    0%{
+        background-image: url(./../charater/back01.png);
+    }
+    25%{
+        background-image: url(./../charater/back02.png);
+    }
+    50%{
+        background-image: url(./../charater/back03.png);
+    }
+    100%{
+        background-image: url(./../charater/back04.png);
+    }
+}
+
+@keyframes walking-left {
+    0%{
+        background-image: url(./../charater/left01.png);
+    }
+    25%{
+        background-image: url(./../charater/left02.png);
+    }
+    50%{
+        background-image: url(./../charater/left03.png);
+    }
+    100%{
+        background-image: url(./../charater/left04.png);
+    }
+}
+
+@keyframes walking-right {
+    0%{
+        background-image: url(./../charater/right01.png);
+    }
+    25%{
+        background-image: url(./../charater/right02.png);
+    }
+    50%{
+        background-image: url(./../charater/right03.png);
+    }
+    100%{
+        background-image: url(./../charater/right04.png);
+    }
+}
+
 
 body{
     background-color: rgb(0, 0, 0);
@@ -327,6 +389,7 @@ body{
     top: 0px;
     left: 0px;
     z-index: 9;
+    animation: none;
 }
     /* Player Name */
 
