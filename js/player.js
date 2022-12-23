@@ -106,22 +106,22 @@ document.addEventListener('DOMContentLoaded', ()=>{
         //up
          if(key == 87){
 
-            person.style.backgroundImage = 'url(./../charater/back01.png)'
+            person.style.backgroundImage = 'url(/../charater/back01.png)'
             person.style.animation = 'none'
         }
         //down
         if(key == 83){
-            person.style.backgroundImage = 'url(./../charater/front01.png)'
+            person.style.backgroundImage = 'url(/../charater/front01.png)'
             person.style.animation = 'none'
 
         }
         if(key == 65){
-            person.style.backgroundImage = 'url(./../charater/left01.png)'
+            person.style.backgroundImage = 'url(/../charater/left01.png)'
             person.style.animation = 'none'
         }
         //right
         if(key == 68){
-            person.style.backgroundImage = 'url(./../charater/right01.png)'
+            person.style.backgroundImage = 'url(/../charater/right01.png)'
             person.style.animation = 'none'
         }
 
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const time = new Date().getHours()
         const bedroomWindow = document.getElementById('bedroom-window')
         if(time <= 5 && time >=0 || time <= 23 && time >= 18 ){
-            bedroomWindow.style.backgroundImage = 'url(./../bedroom-scenery/windownight.png)'
+            bedroomWindow.style.backgroundImage = 'url(/../bedroom-scenery/windownight.png)'
         }
 
         //door exit
