@@ -27,8 +27,20 @@ body{
     position: absolute;
     width: 500px;
     height: 480px;
-    background-color: rgb(22, 0, 22);
+    background-color: rgb(255, 255, 255);
     z-index: 30;
+}
+
+.loading-icon{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-image: url(./../icon/loading001.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 30;
+    transform: translate(160px, 130px);
 }
 
 /* Bedroom */
@@ -335,7 +347,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-size: 70%;
-    z-index: 12;
+    z-index: 10;
     transform: translate(450px, 300px);
 }
 
