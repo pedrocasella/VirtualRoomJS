@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 
   setTimeout(result, 100*1)
-  setTimeout(login, 1000*4)
+  setTimeout(login, 1000*8)
 
   
 //Pictures
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
       });
     });
   }
-  setTimeout(addImage, 1000*4)
+  setTimeout(addImage, 1000*6)
 
   //exit to shelf
   document.getElementById('return-btn').addEventListener('click', ()=>{
@@ -130,10 +130,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
       snapshot.forEach((snapshot)=>{
         const data = snapshot.val();
         const key = snapshot.key
-        document.getElementById('messages-box').innerHTML = ''
-        setTimeout(()=>{
-          document.getElementById('messages-box').innerHTML += "<ul class='message'><li class='nameCtt'>" + data.sender + "</li><li class='sendedMessage'>" + data.message + "</li></ul><hr>"
-        }, 100*5)
+        document.getElementById('messages-box').innerHTML += "<ul class='message'><li class='nameCtt'>" + data.sender + "</li><li class='sendedMessage'>" + data.message + "</li></ul><hr>"
+       
       })
     });
 
@@ -141,6 +139,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
         const message = document.getElementById('message-input').value
         const messageRef = ref(db, 'user/globalMessages')
         const messagePush = push(messageRef)
+        document.getElementById('messages-box').innerHTML = ''
         set(messagePush, {
           sender: localStorage.getItem('name'),
           message: message,

@@ -124,6 +124,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 if(key == 32 && positionX >= 68 && positionX <= 96 && positionY == -36){
                     document.getElementById('pictures').style.display = 'block'
                     setInterval(()=>{
+                    console.clear()
                     var file = document.getElementById('image-input').files[0]
                     var reader = new FileReader();
                     reader.readAsDataURL(file);

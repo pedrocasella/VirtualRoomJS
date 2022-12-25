@@ -282,7 +282,7 @@ body{
     overflow-y: scroll;
 }
 
-.messages-box .messages{
+.messages-box .message{
     color: white;
     font-weight: normal;
 }
@@ -294,6 +294,9 @@ body{
 
 .sendedMessage{
     margin-bottom: .5rem;
+    font-weight: bolder;
+    overflow-x: hidden;
+    flex-wrap: nowrap;
 }
 
 .cellphone li{
