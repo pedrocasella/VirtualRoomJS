@@ -6,15 +6,13 @@
 
 
  const firebaseConfig = {
-   apiKey: "AIzaSyCS9U3iZnhoBqk0i3IsrBV0K0taPT3KPPA",
-   authDomain: "casella-virtualroom.firebaseapp.com",
-   databaseURL: "https://casella-virtualroom-default-rtdb.firebaseio.com",
-   projectId: "casella-virtualroom",
-   storageBucket: "casella-virtualroom.appspot.com",
-   messagingSenderId: "788596858173",
-   appId: "1:788596858173:web:8809da5605133f82983954",
-   measurementId: "G-0FB878B2Y8",
-   databaseURL: "https://casella-virtualroom-default-rtdb.firebaseio.com/",
+    apiKey: "AIzaSyAEuHA_ublHg2YKSiNv4EBZFDv6S0OTIBg",
+    authDomain: "virtual-bedroom.firebaseapp.com",
+    databaseURL: "https://virtual-bedroom-default-rtdb.firebaseio.com",
+    projectId: "virtual-bedroom",
+    storageBucket: "virtual-bedroom.appspot.com",
+    messagingSenderId: "303432228539",
+    appId: "1:303432228539:web:2b0c460feb4ce14255539e"
  };
 
  // Initialize Firebase
