@@ -134,6 +134,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
 
     document.getElementById('sendMenssage-btn').addEventListener('click', ()=>{
+      if(document.getElementById('message-input').value == ''){
+        alert('Message not sended!')
+      }else{
         const message = document.getElementById('message-input').value
         const messageRef = ref(db, 'user/globalMessages')
         const messagePush = push(messageRef)
@@ -143,5 +146,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
           message: message,
         })
         document.getElementById('message-input').value = ''
+      }
+
     })
 })
